@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <div id="onboarding-screen" class="bg-black text-white w-full h-[900px] flex flex-col p-8">
+  <div id="header" class="w-full max-w-5xl mx-auto flex justify-between items-center pt-4">
+    <button class="text-neutral-400 hover:text-white transition-colors">
+      <i class="fa-solid fa-arrow-left fa-lg"></i>
+    </button>
+    <span class="text-sm text-neutral-300 tracking-wider">Overview</span>
+    <button class="text-neutral-400 hover:text-white transition-colors">
+      <i class="fa-solid fa-xmark fa-lg"></i>
+    </button>
+  </div>
+
+  <div id="onboarding-content" class="w-full max-w-2xl mx-auto flex-grow pt-16">
+    <div id="intro-section" class="mb-8">
+      <h1 class="text-5xl tracking-tight">
+        Up Next
+      </h1>
+    </div>
+
+    <div id="timeline-section">
+      <div id="timeline-steps" class="relative pl-8">
+        <div class="absolute left-0 top-2 bottom-0 w-0.5 bg-neutral-600"></div>
+        
+        <div id="step-1" class="relative mb-6">
+          <h3 class="text-base text-neutral-500">The Basics</h3>
+          <p class="text-sm text-neutral-600">4/4 Completed</p>
+        </div>
+
+        <div id="step-2" class="relative mb-6">
+          <div class="absolute -left-[43px] top-1.5 w-6 h-6 bg-white bg-opacity-20 backdrop-blur-sm rounded-full border-2 border-white border-opacity-30 shadow-lg"></div>
+          <h3 class="text-base text-white">Your Practice</h3>
+          <p class="text-sm text-neutral-500 mb-2">0/4 Completed</p>
+          <p class="text-base text-neutral-300 max-w-md">
+            We're now going to ask about your clinic setup and the decompression services you provide. This helps us understand how your program is structured and what patients experience when they visit.
+          </p>
+        </div>
+
+        <div id="step-3" class="relative mb-6">
+          <h3 class="text-base text-neutral-500">Patient Flow & Protocol</h3>
+          <p class="text-sm text-neutral-600">0/2 Completed</p>
+        </div>
+
+        <div id="step-4" class="relative mb-6">
+          <h3 class="text-base text-neutral-500">Pricing & Sales</h3>
+          <p class="text-sm text-neutral-600">0/7 Completed</p>
+        </div>
+
+        <div id="step-5" class="relative">
+          <h3 class="text-base text-neutral-500">Your Mindset, Goals & Preferences</h3>
+          <p class="text-sm text-neutral-600">0/5 Completed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="w-full max-w-2xl mx-auto pb-8 pt-4">
+    <div class="flex items-center space-x-4">
+      <button class="w-1/2 py-3 text-center text-white bg-black border border-neutral-700 rounded-full hover:border-white transition-colors tracking-wider text-sm">
+        PREVIOUS
+      </button>
+      <button class="w-1/2 py-3 text-center text-black bg-white rounded-full hover:bg-neutral-200 transition-colors tracking-wider text-sm">
+        NEXT
+      </button>
+    </div>
+  </div>
+</div>
+  </body>
+</html>

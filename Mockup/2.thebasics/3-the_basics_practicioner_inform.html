@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <div id="form-screen" class="bg-white text-black w-full h-[900px] flex flex-col p-8">
+  <div id="header" class="w-full max-w-4xl mx-auto flex justify-between items-center py-4 border-b border-neutral-200">
+    <button class="text-neutral-600 hover:text-black transition-colors">
+      <i class="fa-solid fa-arrow-left fa-lg"></i>
+    </button>
+    <h1 class="text-base text-neutral-800 tracking-wide">Intake Questionnaire</h1>
+    <button class="text-neutral-600 hover:text-black transition-colors">
+      <i class="fa-solid fa-xmark fa-lg"></i>
+    </button>
+  </div>
+
+  <div id="form-content" class="w-full max-w-2xl mx-auto flex-grow pt-12">
+    <div id="progress-indicator" class="mb-10">
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-sm text-black">Practitioner Information</h2>
+        <span class="text-sm text-neutral-500">1/4</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <div class="h-1 flex-1 bg-black rounded-full"></div>
+        <div class="h-1 flex-1 bg-neutral-200 rounded-full"></div>
+        <div class="h-1 flex-1 bg-neutral-200 rounded-full"></div>
+        <div class="h-1 flex-1 bg-neutral-200 rounded-full"></div>
+      </div>
+    </div>
+
+    <form id="intake-form" class="space-y-6">
+      <div id="first-name-group">
+        <label for="first-name" class="block text-sm text-neutral-800 mb-1">First Name</label>
+        <input type="text" id="first-name" class="w-full px-3 py-2 bg-white border border-neutral-300 rounded-md text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+      </div>
+
+      <div id="last-name-group">
+        <label for="last-name" class="block text-sm text-neutral-800 mb-1">Last Name</label>
+        <input type="text" id="last-name" class="w-full px-3 py-2 bg-white border border-neutral-300 rounded-md text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+      </div>
+
+      <div id="email-group">
+        <label for="email" class="block text-sm text-neutral-800 mb-1">Email</label>
+        <input type="email" id="email" class="w-full px-3 py-2 bg-white border border-neutral-300 rounded-md text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+      </div>
+
+      <div id="clinic-name-group">
+        <label for="clinic-name" class="block text-sm text-neutral-800 mb-1">Clinic Name</label>
+        <input type="text" id="clinic-name" class="w-full px-3 py-2 bg-white border border-neutral-300 rounded-md text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+      </div>
+
+      <div id="office-address-group">
+        <label for="office-address" class="block text-sm text-neutral-800 mb-1">Office Address</label>
+        <input type="text" id="office-address" class="w-full px-3 py-2 bg-white border border-neutral-300 rounded-md text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+      </div>
+
+      <div id="location-group">
+        <label for="location" class="block text-sm text-neutral-800 mb-1">City / State / Zip Code</label>
+        <input type="text" id="location" class="w-full px-3 py-2 bg-white border border-neutral-300 rounded-md text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+      </div>
+    </form>
+  </div>
+
+  <div id="footer" class="w-full max-w-2xl mx-auto pt-8 pb-4">
+    <div class="flex items-center space-x-4">
+      <button class="w-1/2 py-3 text-center text-sm text-black bg-white border border-neutral-300 rounded-md hover:bg-neutral-50 transition-colors">
+        PREVIOUS
+      </button>
+      <button class="w-1/2 py-3 text-center text-sm text-white bg-black rounded-md hover:bg-neutral-800 transition-colors">
+        NEXT
+      </button>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
