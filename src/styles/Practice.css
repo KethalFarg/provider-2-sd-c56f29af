@@ -1,0 +1,269 @@
+/* Practice Section Specific Styles */
+
+/* Carousel Styles */
+.carousel-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    perspective: 1000px;
+    /* Essential for 3D effect */
+    height: 600px;
+    /* Increased height to fit everything vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* layout from top down */
+    align-items: center;
+    overflow: hidden;
+    /* Prevent 3D elements from expanding page width */
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    /* Accommodate card height + reflection/shadow */
+    transform-style: preserve-3d;
+    margin-bottom: 2rem;
+    /* Push controls down */
+    /* Removed left: 50% to prevent layout shift */
+}
+
+.carousel-card {
+    position: absolute;
+    top: 2rem;
+    /* Add some top breathing room */
+    left: 50%;
+    /* Center the card origin relative to track */
+    width: 65%;
+    /* Card width relative to container */
+    max-width: 280px;
+    aspect-ratio: 1/1.2;
+    /* Slightly taller for label */
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    /* Transform-origin default is center, which works with our translate logic */
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* Transformations are handled inline in JS */
+}
+
+/* Reuse existing equipment styling within card */
+.carousel-card .equipment-image-container {
+    flex: 1;
+    /* Take up remaining space */
+    width: 100%;
+    aspect-ratio: auto;
+    /* Override square aspect ratio from grid */
+    height: 100%;
+}
+
+.carousel-action {
+    text-align: center;
+    margin-top: 0;
+    z-index: 20;
+    padding-bottom: 2rem;
+}
+
+.selected-label-display {
+    display: none;
+    /* Hide just in case, though removed from JSX */
+}
+
+.select-button {
+    background-color: var(--color-black);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.select-button:hover {
+    transform: scale(1.05);
+}
+
+/* Checkmark Overlay */
+.detail-checkmark {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #42b5c2;
+    /* Teal checkmark */
+    font-size: 1.25rem;
+}
+
+/* Controls */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    /* Wide gap */
+    margin-top: 0;
+    margin-bottom: 2rem;
+    /* Push button down */
+    z-index: 20;
+}
+
+.carousel-arrow {
+    background: transparent;
+    border: none;
+    width: 7rem;
+    /* Doubled from 3.5rem */
+    height: 7rem;
+    /* Doubled from 3.5rem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    /* Only animate transform now */
+    padding: 0;
+    /* Ensure no padding affects svg size */
+}
+
+.carousel-arrow:hover {
+    background: transparent;
+    transform: scale(1.1);
+}
+
+@media (max-width: 640px) {
+    .carousel-controls {
+        gap: 1rem;
+    }
+
+    .carousel-arrow {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+.carousel-action {
+    display: none;
+    /* Removed */
+}
+
+.carousel-minis {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #d4d4d4;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.carousel-dot.active {
+    background-color: var(--color-black);
+    transform: scale(1.2);
+}
+
+/* Equipment Grid - Keep for backup or modify if replaced completely */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    /* Increased gap for better spacing */
+}
+
+.equipment-option {
+    width: 100%;
+    padding: 0;
+    /* CRITICAL: Remove default button padding */
+    border: none;
+    /* Remove border */
+    border-radius: 1rem;
+    /* Smoother, larger radius */
+    overflow: hidden;
+    background-color: var(--color-white);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Smoother transition */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Soft shadow */
+    position: relative;
+    /* For focus ring positioning */
+}
+
+.equipment-option:hover {
+    transform: translateY(-4px);
+    /* Lift effect */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Specific focus state */
+.equipment-option:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 181, 194, 0.5), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    /* Teal focus ring + shadow */
+}
+
+/* Image container within the option */
+.equipment-image-container,
+.equipment-image-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8fafc;
+    /* Very light slate */
+}
+
+.equipment-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.equipment-option:hover .equipment-image {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+}
+
+.equipment-image-placeholder {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
+
+.equipment-label {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem 0.5rem;
+    /* More padding */
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: 100%;
+    /* Ensure full width */
+    z-index: 2;
+}
